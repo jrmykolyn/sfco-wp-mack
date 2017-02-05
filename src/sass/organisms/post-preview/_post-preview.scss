@@ -3,6 +3,8 @@
 // --------------------------------------------------
 $post-preview: '.post-preview';
 
+$card-aspect: 5 4;
+
 
 // --------------------------------------------------
 // PLACEHOLDERS 
@@ -15,14 +17,31 @@ $post-preview: '.post-preview';
 // --------------------------------------------------
 #{$post-preview} {
     @include size( auto );
-    @include span( 4 of 12 );
+    @include span( 12 of 12 );
     @include position( relative );
 
     margin-bottom: rem( 30 ); /// TEMP
-    padding-top: 40%; /// TEMP
+    padding-top: applyAspect( $card-aspect, 100% ); /// TODO - Update `applyAspect` call to be more clear/explicit.
 
-    &:nth-child( 3n ) {
-        @include last;
+    // Media queries
+    @media ( min-width: 480px ) and ( max-width: 767px ) {
+        @include span( 6 of 12 );
+
+        padding-top: applyAspect( $card-aspect, span( 6 of 12 ) ); /// TODO - Update `applyAspect` call to be more clear/explicit.
+
+        &:nth-child( 2n ) {
+            @include last;
+        }
+    }
+
+    @media ( min-width: 768px ) {
+        @include span( 4 of 12 );
+
+        padding-top: applyAspect( $card-aspect, span( 4 of 12 ) ); /// TODO - Update `applyAspect` call to be more clear/explicit.
+
+        &:nth-child( 3n ) {
+            @include last;
+        }
     }
 }
 
@@ -39,8 +58,8 @@ $post-preview: '.post-preview';
     @include size( 100% );
     @include display( block );
     @include position( absolute, 0 0 0 0 );
-    
+
     padding: rem( 30 );
-    
+
     text-align: center;
 }
