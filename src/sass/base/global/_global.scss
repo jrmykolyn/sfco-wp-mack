@@ -25,6 +25,7 @@ body {
 body {
     color: getColor( grey );
     font-family: getFont( copy );
+    overflow-x: hidden;
 }
 
 img {
