@@ -1,0 +1,46 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$post-preview: '.post-preview';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post-preview} {
+    @include size( auto );
+    @include span( 4 of 12 );
+    @include position( relative );
+
+    margin-bottom: rem( 30 ); /// TEMP
+    padding-top: 40%; /// TEMP
+
+    &:nth-child( 3n ) {
+        @include last;
+    }
+}
+
+#{$post-preview}__image {
+    @include size( 100% );
+    @include position( absolute, 0 0 0 0 );
+
+    background-image: url( 'https://placeholdit.imgix.net/~text?txtsize=48&txt=PREVIEW%20IMAGE&w=600&h=600' );
+    background-position: center;
+    background-size: cover;
+}
+
+#{$post-preview}__content {
+    @include size( 100% );
+    @include display( block );
+    @include position( absolute, 0 0 0 0 );
+    
+    padding: rem( 30 );
+    
+    text-align: center;
+}
