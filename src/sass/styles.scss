@@ -2,9 +2,11 @@
 @import 'normalize';
 @import 'bourbon';
 @import 'susy';
+
+// Import project config.
+@import 'config/manifest';
 @import 'sfco-sass-utils';
 
 // Import project styles.
-@import 'config/manifest';
 @import 'base/manifest';
 @import 'organisms/manifest';
