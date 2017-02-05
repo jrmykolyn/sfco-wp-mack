@@ -8,7 +8,15 @@ get_header();
 </header>
 <section class="layout-section">
     <div class="layout-section__inner">
-        <!-- POSTS HERE -->
+        <?php
+        if ( have_posts() ):
+            while( have_posts() ): the_post();
+                get_template_part( 'inc/preview/_preview' );
+            endwhile;
+        else:
+            /* TODO - Handle 'no posts' case. */
+        endif;
+        ?>
     </div><!-- /.layout-section__inner -->
 </section><!-- /.layout-section -->
 <?php
