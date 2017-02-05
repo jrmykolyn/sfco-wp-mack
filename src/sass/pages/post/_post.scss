@@ -19,14 +19,39 @@ $post-body: #{$post}-body;
     @include max-size( rem( 800 ) auto );
 
     margin: 0 auto;
-    padding-top: rem( 55 );
+    padding-top: rem( 25 );
+
+    @media ( min-width: 768px ) {
+        padding-top: rem( 55 );
+    }
 }
 
 #{$post-body} {
-    // background-color: blue;
+    padding-top: rem( 35 );
 
-    img {
-        display: block;
+    @media ( min-width: 768px ) {
+        margin-bottom: rem( 75 );
+    }
+}
+
+#{$post-body} img {
+    @include display( block );
+    @include set( margin-top margin-bottom, rem( 20 ) );
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    // Media queries
+    @media ( min-width: 768px ) {
         @include set( margin-top margin-bottom, rem( 40 ) );
+    }
+
+    // Supplementary classes
+    &.full-bleed {
+        @include size( 100vw auto );
+        @include max-size( 100vw auto );
+
+        margin-left: calc((50vw - 50%)*-1);
     }
 }

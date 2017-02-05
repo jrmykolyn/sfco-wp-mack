@@ -24,10 +24,21 @@ $post-credits: #{$post}-credits;
 
 #{$post-title} {
     margin: 0;
-    margin-bottom: rem( 30 );
+    margin-bottom: rem( 20 );
 
     font-family: getFont( display );
-    font-size: rem( 60 );
+    font-size: rem( 36 );
+
+    @media ( min-width: 600px ) {
+        font-size: rem( 48 );
+    }
+
+    @media ( min-width: 768px ) {
+        margin-bottom: rem( 30 );
+
+        font-size: rem( 62 );
+        letter-spacing: rem( 1.75 );
+    }
 }
 
 #{$post-category},
@@ -39,9 +50,14 @@ $post-credits: #{$post}-credits;
 
 #{$post-category} {
     margin: 0;
-    margin-bottom: rem( 30 );
-    
+    margin-bottom: rem( 20 );
+
     text-transform: uppercase;
+    letter-spacing: rem( 1.5 );
+
+    @media ( min-width: 768px ) {
+        margin-bottom: rem( 30 );
+    }
 }
 
 #{$post-dek} {
