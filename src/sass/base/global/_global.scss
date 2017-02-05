@@ -1,0 +1,27 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    @include set( margin padding, 0 );
+}
+
+img {
+    @include max-size( 100% auto );
+}

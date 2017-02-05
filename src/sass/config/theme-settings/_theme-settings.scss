@@ -1,0 +1,22 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+$susy: (
+    columns: 12,
+    gutters: 1/2,
+    debug: (
+        image: show
+    )
+);

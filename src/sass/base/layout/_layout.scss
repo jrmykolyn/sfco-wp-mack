@@ -1,0 +1,31 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$layout-section: '.layout-section';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+%__grid--base {
+    @include container;
+
+    @include size( 95% auto );
+    @include max-size( rem( 1080 ) auto );
+    @include display( block );
+    @include set( margin-left margin-right, auto );
+}
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$layout-section} {
+    @include size( 100% auto );
+    @include display( block );
+}
+
+
+#{$layout-section}__inner {
+    @extend %__grid--base;
+}
