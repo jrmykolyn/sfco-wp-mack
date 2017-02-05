@@ -8,7 +8,7 @@ if ( have_posts() ):
         <section class="layout-section">
             <div class="layout-section__inner">
                 <div class="post-header">
-                    <h1 class="post-title">Bicycle Film Festival</h1>
+                    <h1 class="post-title">Toronto Bicycle Film Festival</h1>
                     <h2 class="post-category">The Category</h2>
                     <p class="post-dek">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -26,7 +26,7 @@ if ( have_posts() ):
                 <div class="post-body">
                     <img src="http://lorempixel.com/g/1200/900/" alt="...">
                     <img src="http://lorempixel.com/g/1200/900/" alt="...">
-                    <img src="http://lorempixel.com/g/1200/900/" alt="...">
+                    <img class="full-bleed" src="http://lorempixel.com/g/1200/900/" alt="...">
                     <img src="http://lorempixel.com/g/1200/900/" alt="...">
                     <img src="http://lorempixel.com/g/1200/900/" alt="...">
                     <img src="http://lorempixel.com/g/1200/900/" alt="...">
