@@ -22,6 +22,22 @@ body {
     @include set( margin padding, 0 );
 }
 
+body {
+    color: getColor( grey );
+    font-family: getFont( copy );
+}
+
 img {
     @include max-size( 100% auto );
+}
+
+hr {
+    @include set( margin-top margin-bottom, rem( 30 ) );
+
+    border: none;
+    border-top: rem( 1 ) solid getColor( grey );
+}
+
+a {
+    color: getColor( black );
 }
