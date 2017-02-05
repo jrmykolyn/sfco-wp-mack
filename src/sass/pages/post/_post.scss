@@ -1,0 +1,32 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$post: '.post';
+$post-header: #{$post}-header;
+$post-body: #{$post}-body;
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post-header} {
+    @include max-size( rem( 800 ) auto );
+
+    margin: 0 auto;
+    padding-top: rem( 55 );
+}
+
+#{$post-body} {
+    // background-color: blue;
+
+    img {
+        display: block;
+        @include set( margin-top margin-bottom, rem( 40 ) );
+    }
+}

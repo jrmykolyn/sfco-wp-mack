@@ -1,0 +1,73 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$post: '.post';
+$post-title: #{$post}-title;
+$post-category: #{$post}-category;
+$post-dek: #{$post}-dek;
+$post-credits: #{$post}-credits;
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post-title},
+#{$post-category} {
+    text-align: center;
+}
+
+#{$post-title} {
+    margin: 0;
+    margin-bottom: rem( 30 );
+
+    font-family: getFont( display );
+    font-size: rem( 60 );
+}
+
+#{$post-category},
+#{$post-dek},
+#{$post-credits} {
+    font-size: rem( 14 );
+    line-height: 1.5;
+}
+
+#{$post-category} {
+    margin: 0;
+    margin-bottom: rem( 30 );
+    
+    text-transform: uppercase;
+}
+
+#{$post-dek} {
+    text-align: center;
+}
+
+#{$post-credits} {
+    @include clearfix;
+    @include size( 100% auto );
+    @include set( margin padding, 0 );
+
+    list-style: none;
+
+    &__item {
+        @media ( min-width: 768px ) {
+            @include size( 50% auto );
+
+            float: left;
+
+            &:nth-child( 2n - 1 ) {
+                padding-right: rem( 20 );
+            }
+
+            &:nth-child( 2n + 1 ) {
+                clear: left;
+            }
+        }
+    }
+}
