@@ -1,0 +1,51 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$index: '.index';
+$index-title: #{$index}-title;
+$index-subtitle: #{$index}-subtitle;
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$index-title},
+#{$index-subtitle} {
+    color: getColor( accent );
+    margin: 0;
+}
+
+#{$index-title} {
+    margin-bottom: rem( 20 );
+
+    font-size: rem( 36 );
+    line-height: 1.2;
+    
+    @media ( min-width: 600px ) {
+        font-size: rem( 48 );
+    }
+    
+    @media ( min-width: 768px ) {
+        font-size: rem( 60 );
+    }
+}
+
+#{$index-subtitle} {
+    font-family: getFont( copy );
+    font-size: rem( 14 );
+    line-height: 1.5;
+    
+    @media ( min-width: 600px ) {
+        font-size: rem( 16 );
+    }
+    
+    @media ( min-width: 768px ) {
+        font-size: rem( 18 );
+    }
+}

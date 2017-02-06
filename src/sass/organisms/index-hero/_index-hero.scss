@@ -15,6 +15,7 @@ $index-hero: '.index-hero';
 // --------------------------------------------------
 #{$index-hero} {
     @include size( 100% 100vh );
+    @include min-size( 100% rem( 600 ) );
     @include position( relative );
 }
 
@@ -26,6 +27,21 @@ $index-hero: '.index-hero';
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+}
+
+#{$index-hero}__content {
+    @include size( 100% );
+    @include position( absolute, 0 0 0 0 );
+
+    background-color: rgba( getColor( white ), 0.8 );
+    padding-top: rem( 200 );
+    padding-bottom: rem( 100 );
+
+    text-align: center;
+
+    & > * {
+        margin: 0;
+    }
 }
 
 #{$index-hero}__cta {
@@ -42,9 +58,16 @@ $index-hero: '.index-hero';
         @include size( 50% )
         @include position( absolute, 50% null null 50% );
         @include transform( translate( -50%, -75% ) rotate( 45deg ) );
-        @include set( border-right border-bottom, rem( 2 ) solid black );
+        @include set( border-right border-bottom, rem( 2 ) solid getColor( grey ) );
 
         content: '';
         display: block;
     }
+}
+
+#{$index-hero}-text {
+    @include size( 100% auto );
+    @include position( absolute, 50% null null 0 );
+    @include transform( translateY( -50% ) );
+    @include set( padding-left padding-right, rem( 20 ) );
 }

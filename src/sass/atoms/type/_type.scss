@@ -1,0 +1,28 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include transition( font-size 0.2s );
+}
+
+h1 {
+    font-family: getFont( display );
+}
+

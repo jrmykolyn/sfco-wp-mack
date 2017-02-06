@@ -3,7 +3,13 @@ get_header();
 ?>
 <header>
     <section class="index-hero">
-        <div class="index-hero__image" style="background-image: url( 'https://placeholdit.imgix.net/~text?txtsize=72&txt=INDEX%20HERO&w=1600&h=900' );">
+        <div class="index-hero__image" style="background-image: url( 'http://lorempixel.com/1600/900/abstract/' );">
+        </div>
+        <div class="index-hero__content">
+            <div class="index-hero-text">
+                <h1 class="index-title">This is a title</h2>
+                <h2 class="index-subtitle">This is a subtitle</h3>
+            </div>
         </div>
         <div class="index-hero__cta js--index-hero-arrow">
 
