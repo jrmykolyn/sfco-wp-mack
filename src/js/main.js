@@ -1,3 +1,3 @@
 $( document ).ready( function() {
-    console.log( 'INSIDE DOCUMENT READY' );
+    // DO THE NEEDFUL.
 } );
