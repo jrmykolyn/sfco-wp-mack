@@ -49,8 +49,11 @@ $index-hero: '.index-hero';
     @include display( block );
     @include position( absolute, null null rem( 30 ) 50% );
     @include transform( translateX( -50% ) );
+    @include transition( all 0.2s );
 
     @include on( hover focus ) {
+        bottom: rem( 33 );
+        opacity: 0.7;
         cursor: pointer;
     }
 
