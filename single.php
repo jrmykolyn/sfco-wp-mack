@@ -3,13 +3,15 @@ get_header();
 
 if ( have_posts() ):
     while( have_posts() ): the_post();
-        get_template_part( 'inc/post/_post-hero' );
+        if ( get_field( 'hero_image' ) ):
+            get_template_part( 'inc/post/_post-hero' );
+        endif;
         ?>
         <section class="layout-section">
             <div class="layout-section__inner">
                 <div class="post-header">
-                    <h1 class="post-title">Toronto Bicycle Film Festival</h1>
-                    <h2 class="post-category">The Category</h2>
+                    <h1 class="post-title"><?= get_the_title(); ?></h1>
+                    <h2 class="post-category"><?= getTheFirstCategory( get_the_ID() ); ?></h2>
                     <p class="post-dek">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
