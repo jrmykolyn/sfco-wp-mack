@@ -21,10 +21,14 @@ $card-aspect: 5 4;
     @include position( relative );
 
     background-color: rgba( 0,0,0,0.05 ); /// TEMP
-    margin-bottom: rem( 30 ); /// TEMP
+    margin-bottom: rem( 20 );
     padding-top: applyAspect( $card-aspect, 100% ); /// TODO - Update `applyAspect` call to be more clear/explicit.
 
     // Media queries
+    @media ( min-width: 480px ) {
+        margin-bottom: gutter();
+    }
+
     @media ( min-width: 480px ) and ( max-width: 767px ) {
         @include span( 6 of 12 );
 
