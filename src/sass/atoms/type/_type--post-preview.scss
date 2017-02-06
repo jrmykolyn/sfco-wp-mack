@@ -1,0 +1,44 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$post-preview: '.post-preview';
+$post-preview-title: #{$post-preview}-title;
+$post-preview-category: #{$post-preview}-category;
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post-preview-title},
+#{$post-preview-category} {
+    @include set( margin, 0 );
+
+    color: rgba( 0,0,0,0.7 );
+    line-height: 1.25;
+}
+
+#{$post-preview-title} {
+    margin-bottom: rem( 19 );
+
+    font-family: getFont( display );
+    font-size: rem( 25 );
+
+    @media ( min-width: 480px ) and ( max-width: 959px ) {
+        font-size: rem( 18 );
+    }
+}
+
+#{$post-preview-category} {
+    font-size: rem( 18 );
+
+    @media ( min-width: 480px ) and ( max-width: 959px ) {
+        font-size: rem( 16 );
+    }
+}
+
