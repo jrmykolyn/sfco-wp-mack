@@ -3,7 +3,8 @@ get_header();
 ?>
 <header>
     <section class="index-hero">
-        <img src="https://placeholdit.imgix.net/~text?txtsize=72&txt=INDEX%20HERO&w=1600&h=900" alt="<?= '/// TEMP - Index Hero'?>">
+        <div class="index-hero__image" style="background-image: url( 'https://placeholdit.imgix.net/~text?txtsize=72&txt=INDEX%20HERO&w=1600&h=900' );">
+        </div>
     </section><!-- /.index-hero -->
 </header>
 <section class="layout-section">
