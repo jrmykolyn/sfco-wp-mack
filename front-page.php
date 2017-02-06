@@ -5,6 +5,9 @@ get_header();
     <section class="index-hero">
         <div class="index-hero__image" style="background-image: url( 'https://placeholdit.imgix.net/~text?txtsize=72&txt=INDEX%20HERO&w=1600&h=900' );">
         </div>
+        <div class="index-hero__cta">
+
+        </div>
     </section><!-- /.index-hero -->
 </header>
 <section class="layout-section">

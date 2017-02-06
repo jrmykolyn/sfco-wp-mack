@@ -26,3 +26,24 @@ $index-hero: '.index-hero';
     background-position: center;
     background-size: cover;
 }
+
+#{$index-hero}__cta {
+    @include size( rem( 40 ) );
+    @include display( block );
+    @include position( absolute, null null rem( 30 ) 50% );
+    @include transform( translateX( -50% ) );
+
+    @include on( hover focus ) {
+        cursor: pointer;
+    }
+
+    @include pseudo( before ) {
+        @include size( 50% )
+        @include position( absolute, 50% null null 50% );
+        @include transform( translate( -50%, -75% ) rotate( 45deg ) );
+        @include set( border-right border-bottom, rem( 2 ) solid black );
+
+        content: '';
+        display: block;
+    }
+}
