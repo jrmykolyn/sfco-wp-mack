@@ -1,4 +1,22 @@
 <?php
+/* THEME FUNCTIONS */
+/**
+ * ...
+ *
+ * @param {Number} `$id`
+ * @return {String}
+ */
+function getTheFirstCategory( $id=-1, $nameOnly=true) {
+    $categories = get_the_category( $id );
+    $category = $categories[ 0 ];
+
+    if ( $category && strtolower( $category->name ) != 'uncategorized'  ) {
+        return $nameOnly ? $category->name : $category;
+    } else {
+        return '';
+    }
+}
+
 /* THEME DEFAULTS */
 add_theme_support( 'post-thumbnails' );
 
