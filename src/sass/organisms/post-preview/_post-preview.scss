@@ -19,10 +19,12 @@ $card-aspect: 5 4;
     @include size( auto );
     @include span( 12 of 12 );
     @include position( relative );
+    @include transition( all 0.2s );
 
     background-color: rgba( 0,0,0,0.05 ); /// TEMP
     margin-bottom: rem( 20 );
     padding-top: applyAspect( $card-aspect, 100% ); /// TODO - Update `applyAspect` call to be more clear/explicit.
+    overflow: hidden;
 
     // Media queries
     @media ( min-width: 480px ) {
@@ -50,23 +52,41 @@ $card-aspect: 5 4;
     }
 }
 
+#{$post-preview} a {
+    @include display( block );
+    @include position( absolute, 0 0 0 0 )
+}
+
 #{$post-preview}__image {
     @include size( 100% );
     @include position( absolute, 0 0 0 0 );
+    @include transition( all 0.3s );
 
     background-image: url( 'https://placeholdit.imgix.net/~text?txtsize=48&txt=PREVIEW%20IMAGE&w=600&h=600' );
     background-position: center;
     background-size: cover;
+
+    /// TEMP - Move into dedicated mixin.
+    *:hover > &,
+    *:focus > & {
+        @include transform( scale( 1.05 ) );
+    }
 }
 
 #{$post-preview}__content {
     @include size( 100% );
     @include display( block );
     @include position( absolute, 0 0 0 0 );
+    @include transition( all 0.3s );
 
     padding: rem( 30 );
-
     text-align: center;
+
+    /// TEMP - Move into dedicated mixin.
+    *:hover > &,
+    *:focus > & {
+        background-color: rgba( getColor( white ), 0.1 );
+    }
 
     h2,
     h3 {
