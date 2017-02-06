@@ -21,9 +21,10 @@ $index-hero: '.index-hero';
 #{$index-hero}__image {
     @include size( 100% );
     @include position( absolute, 0 0 0 0 );
-    
+
     background-color: rgba( 0,0,0,0.05 ); /// TEMP
     background-position: center;
+    background-attachment: fixed;
     background-size: cover;
 }
 
