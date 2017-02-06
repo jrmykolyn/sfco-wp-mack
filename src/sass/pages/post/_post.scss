@@ -19,10 +19,9 @@ $post-body: #{$post}-body;
     @include max-size( rem( 800 ) auto );
 
     margin: 0 auto;
-    padding-top: rem( 25 );
 
     @media ( min-width: 768px ) {
-        padding-top: rem( 55 );
+        padding-top: rem( 25 );
     }
 }
 
@@ -30,7 +29,7 @@ $post-body: #{$post}-body;
     padding-top: rem( 35 );
 
     @media ( min-width: 768px ) {
-        margin-bottom: rem( 75 );
+        padding-top: rem( 75 );
     }
 }
 

@@ -23,7 +23,15 @@ $layout-section: '.layout-section';
 #{$layout-section} {
     @include size( 100% auto );
     @include display( block );
-    @include set( padding-top padding-bottom, 20px );
+    @include set( padding-top padding-bottom, rem( 30 ) );
+
+    @media ( min-width: 600px ) {
+        @include set( padding-top padding-bottom, rem( 40 ) );
+    }
+
+    @media ( min-width: 768px ) {
+        @include set( padding-top padding-bottom, rem( 50 ) );
+    }
 }
 
 
