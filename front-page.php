@@ -3,7 +3,9 @@ get_header();
 ?>
 <header>
     <section class="index-hero">
-        <div class="index-hero__image" style="background-image: url( 'http://lorempixel.com/1600/900/abstract/' );">
+        <div class="index-hero__image">
+            <div class="index-hero__image__background" style="background-image: url( <?= get_theme_mod( 'front_page_image_2' ); ?> );"></div>
+            <div class="index-hero__image__foreground" style="background-image: url( <?= get_theme_mod( 'front_page_image_1' ); ?> );"></div>
         </div>
         <div class="index-hero__content">
             <div class="index-hero-text">

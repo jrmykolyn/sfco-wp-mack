@@ -8,18 +8,28 @@
  * ...
  */
  function theme_customize_register( $wp_customize ) {
-    $wp_customize->add_section( 'sfco-wp-mack_front_page_text' , array(
-        'title' => __( 'Front Page Text', 'sfco-wp-mack' ),
-        'priority' => 9999,
+    $wp_customize->add_section( 'sfco-wp-mack_front_page' , array(
+        'title'     => __( 'Front Page', 'sfco-wp-mack' ),
+        'priority'  => 9999,
     ) );
 
     $wp_customize->add_setting( 'front_page_title' , array(
-        'default' => 'My Site',
+        'default'   => 'My Site',
         'transport' => 'refresh',
     ) );
 
     $wp_customize->add_setting( 'front_page_subtitle' , array(
-        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'default'   => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_setting( 'front_page_image_1' , array(
+        'default'   => null,
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_setting( 'front_page_image_2' , array(
+        'default'   => null,
         'transport' => 'refresh',
     ) );
 
@@ -28,9 +38,9 @@
             $wp_customize,
             'front_page_title',
             array(
-                'label' => __( 'Title', 'sfco-wp-mack' ),
-                'section' => 'sfco-wp-mack_front_page_text',
-                'settings' => 'front_page_title',
+                'label'     => __( 'Title', 'sfco-wp-mack' ),
+                'section'   => 'sfco-wp-mack_front_page',
+                'settings'  => 'front_page_title',
             )
         )
     );
@@ -40,10 +50,34 @@
             $wp_customize,
             'front_page_subtitle',
             array(
-                'label' => __( 'Subtitle', 'sfco-wp-mack' ),
-                'section' => 'sfco-wp-mack_front_page_text',
-                'settings' => 'front_page_subtitle',
-                'type' => 'textarea'
+                'label'     => __( 'Subtitle', 'sfco-wp-mack' ),
+                'section'   => 'sfco-wp-mack_front_page',
+                'settings'  => 'front_page_subtitle',
+                'type'      => 'textarea'
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'front_page_image_1',
+            array(
+                'label'      => __( 'Upload the first image.', 'sfco-wp-mack' ),
+                'section'    => 'sfco-wp-mack_front_page',
+                'settings'   => 'front_page_image_1'
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'front_page_image_2',
+            array(
+                'label'      => __( 'Upload the second image.', 'sfco-wp-mack' ),
+                'section'    => 'sfco-wp-mack_front_page',
+                'settings'   => 'front_page_image_2'
             )
         )
     );
