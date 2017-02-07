@@ -101,16 +101,17 @@ function getTheFirstCategory( $id=-1, $nameOnly=true) {
     }
 }
 
+
 /* THEME DEFAULTS */
 add_theme_support( 'post-thumbnails' );
 
-/* THEME STYLES */
-wp_register_style( 'styles', get_stylesheet_directory_uri() . '/css/styles.css' );
-wp_enqueue_style( 'styles' );
 
-/* THEME SCRIPTS */
+/* THEME SCRIPTS/STYLES */
 if ( !is_admin() ) {
     add_action( "wp_enqueue_scripts", "enqueue_jquery", 11 ) ;
+
+    wp_register_style( 'styles', get_stylesheet_directory_uri() . '/css/styles.css' );
+    wp_enqueue_style( 'styles' );
 
     function enqueue_jquery() {
        wp_deregister_script( 'jquery' );
