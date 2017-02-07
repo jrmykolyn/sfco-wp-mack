@@ -8,6 +8,43 @@
  * ...
  */
  function theme_customize_register( $wp_customize ) {
+     addCustomizationOptsForFrontPage( $wp_customize );
+     addCustomizationOptsForContactInfo( $wp_customize );
+ } // /theme_customize_register()
+
+
+/**
+ * ...
+ */
+function addCustomizationOptsForContactInfo( $wp_customize ) {
+    $wp_customize->add_section( 'sfco-wp-mack_contact_info', array(
+        'title'     => __( 'Contact Info', 'sfco-wp-mack' ),
+        'priority'  => 10000,
+    ) );
+
+    $wp_customize->add_setting( 'contact_info_email' , array(
+        'default'   => 'me@email.com',
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'contact_info_email',
+            array(
+                'label'     => __( 'Email', 'sfco-wp-mack' ),
+                'section'   => 'sfco-wp-mack_contact_info',
+                'settings'  => 'contact_info_email',
+            )
+        )
+    );
+} // /addCustomizationOptsForContactInfo()
+
+
+/**
+ * ...
+ */
+function addCustomizationOptsForFrontPage( $wp_customize ) {
     $wp_customize->add_section( 'sfco-wp-mack_front_page' , array(
         'title'     => __( 'Front Page', 'sfco-wp-mack' ),
         'priority'  => 9999,
@@ -81,7 +118,7 @@
             )
         )
     );
- }
+} // /addCustomizationOptsForFrontPage()
 
 
 /**
@@ -99,7 +136,7 @@ function getTheFirstCategory( $id=-1, $nameOnly=true) {
     } else {
         return '';
     }
-}
+} // /getTheFirstCategory()
 
 
 /* THEME DEFAULTS */
