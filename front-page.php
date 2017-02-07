@@ -7,8 +7,8 @@ get_header();
         </div>
         <div class="index-hero__content">
             <div class="index-hero-text">
-                <h1 class="index-title">This is a title</h2>
-                <h2 class="index-subtitle">This is a subtitle</h3>
+                <h1 class="index-title"><?= get_theme_mod( 'front_page_title' ); ?></h2>
+                <h2 class="index-subtitle"><?= get_theme_mod( 'front_page_subtitle' ); ?></h3>
             </div>
         </div>
         <div class="index-hero__cta js--index-hero-arrow">
