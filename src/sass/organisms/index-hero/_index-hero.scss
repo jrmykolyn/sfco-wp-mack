@@ -35,6 +35,14 @@ $index-hero: '.index-hero';
     background-size: cover;
 }
 
+#{$index-hero}__image__foreground {
+    background-position: center right;
+}
+
+#{$index-hero}__image__background {
+    background-position: center left;
+}
+
 #{$index-hero}__content {
     @include size( 100% );
     @include position( absolute, 0 0 0 0 );
