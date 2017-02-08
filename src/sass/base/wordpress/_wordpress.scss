@@ -1,0 +1,19 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+// Add any SASS variables that are specific to this file here.
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+.aligncenter {
+    @include display( block );
+    @include set( margin-left margin-right, auto );
+}
