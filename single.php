@@ -1,6 +1,9 @@
 <?php
 get_header();
 
+$dek = get_field( 'project_dek' );
+$attribution = get_field( 'project_attribution' );
+
 if ( have_posts() ):
     while( have_posts() ): the_post();
         if ( get_field( 'hero_image' ) ):
@@ -12,27 +15,18 @@ if ( have_posts() ):
                 <div class="post-header">
                     <h1 class="post-title"><?= get_the_title(); ?></h1>
                     <h2 class="post-category"><?= getTheFirstCategory( get_the_ID() ); ?></h2>
-                    <p class="post-dek">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
+                    <?php if ( $dek ): ?>
+                    <p class="post-dek"><?= $dek; ?></p>
+                    <?php endif; ?>
                     <hr>
-                    <ul class="post-credits">
-                        <li class="post-credits__item"><strong>Title:</strong> Name</li>
-                        <li class="post-credits__item"><strong>Title:</strong> Name</li>
-                        <li class="post-credits__item"><strong>Title:</strong> Name</li>
-                        <li class="post-credits__item"><strong>Title:</strong> Name</li>
-                        <li class="post-credits__item"><strong>Title:</strong> Name</li>
-                        <li class="post-credits__item"><strong>Title:</strong> Name</li>
-                    </ul>
+                    <?php if ( $attribution ): ?>
+                        <div class="post-attribution-wrap">
+                            <?= $attribution; ?>
+                        </div>
+                    <?php endif; ?>
                 </div><!-- /.post-header -->
                 <div class="post-body">
-                    <img src="http://lorempixel.com/g/1200/900/" alt="...">
-                    <img src="http://lorempixel.com/g/1200/900/" alt="...">
-                    <img class="full-bleed" src="http://lorempixel.com/g/1200/900/" alt="...">
-                    <img src="http://lorempixel.com/g/1200/900/" alt="...">
-                    <img src="http://lorempixel.com/g/1200/900/" alt="...">
-                    <img src="http://lorempixel.com/g/1200/900/" alt="...">
-                    <img src="http://lorempixel.com/g/1200/900/" alt="...">
+                    <?php the_content(); ?>
                 </div><!-- /.post-body -->
             </div><!-- /.layout-section__inner -->
         </section><!-- /.layout-section -->
