@@ -21,21 +21,17 @@ $footer: '.footer';
 #{$footer}__inner {
     @extend %__grid--base;
 
-    @include display( block );
+    @include display( flex );
+    @include justify-content( space-between );
+    @include descendant( first ) {
+        margin-right: auto;
+    }
+    @include descendant( last ) {
+        margin-left: auto;
+    }
 
     border-top: rem( 1 ) solid getColor( black );
     padding: rem( 15 ) 0 rem( 40 );
-
-    @media ( min-width: 600px ) {
-        @include display( flex );
-        @include justify-content( space-between );
-        @include descendant( first ) {
-            margin-right: auto;
-        }
-        @include descendant( last ) {
-            margin-left: auto;
-        }
-    }
 }
 
 
@@ -43,26 +39,33 @@ $footer: '.footer';
     @include set( margin padding, 0 );
 
     list-style: none;
-    text-align: center;
 
-    @media ( min-width: 600px ) {
-        text-align: left;
+    // Media
+    @media ( max-width: 599px ) {
+        text-align: right;
     }
 }
 
 
 #{$footer}-list__item {
-    @include display( inline-block );
+    @include display( block );
 
-    padding: rem( 5 );
-    margin: 0 rem( 10 );
+    padding: rem( 3 ) 0;
     font-size: rem( 14 );
 
-    &:first-child {
-        margin-left: 0;
-    }
+    // Media queries
+    @media ( min-width: 600px ) {
+        @include display( inline-block );
 
-    &:last-child {
-        margin-right: 0;
+        margin: 0 rem( 10 );
+        padding: rem( 5 );
+
+        &:first-child {
+            @include set( margin-left padding-left, 0 );
+        }
+
+        &:last-child {
+            @include set( margin-right padding-right, 0 );
+        }
     }
 }
