@@ -1,5 +1,5 @@
 <?php
-$textClass = get_field( 'reverse_text' ) ? 'color--white' : '';
+$textClass = get_field( 'project_reverse_text' ) ? 'color--white' : '';
 ?>
 
 <article class="post-preview">
