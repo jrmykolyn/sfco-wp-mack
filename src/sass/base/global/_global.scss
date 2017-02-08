@@ -33,6 +33,7 @@ body {
 }
 
 img {
+    @include size( auto );
     @include max-size( 100% auto );
 }
 

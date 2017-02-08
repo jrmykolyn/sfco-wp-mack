@@ -1,0 +1,37 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$post-attr: '.post-attribution-wrap';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$post-attr} {
+    @include clearfix;
+    @include size( 100% auto );
+    @include set( margin padding, 0 );
+
+    & > * {
+        @include display( block );
+
+        margin: 0;
+        margin-bottom: rem( 5 );
+        padding: rem( 5 ) 0;
+
+        font-size: rem( 14 );
+        
+        // Media queries
+        @media ( min-width: 600px ) {
+            @include size( 50% auto );
+
+            float: left;
+        }
+    }
+}
