@@ -27,6 +27,11 @@ function addCustomizationOptsForContactInfo( $wp_customize ) {
         'transport' => 'refresh',
     ) );
 
+    $wp_customize->add_setting( 'contact_info_instagram' , array(
+        'default'   => null,
+        'transport' => 'refresh',
+    ) );
+
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
@@ -35,6 +40,18 @@ function addCustomizationOptsForContactInfo( $wp_customize ) {
                 'label'     => __( 'Email', 'sfco-wp-mack' ),
                 'section'   => 'sfco-wp-mack_contact_info',
                 'settings'  => 'contact_info_email',
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'contact_info_instagram',
+            array(
+                'label'     => __( 'Instagram', 'sfco-wp-mack' ),
+                'section'   => 'sfco-wp-mack_contact_info',
+                'settings'  => 'contact_info_instagram',
             )
         )
     );
