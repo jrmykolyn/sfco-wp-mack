@@ -1,0 +1,53 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$footer: '.footer';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$footer} {
+    @include size( 100% auto );
+}
+
+
+#{$footer}__inner {
+    @extend %__grid--base;
+
+    @include set( padding-top padding-bottom, rem( 30 ) );
+
+    border-top: rem( 1 ) solid getColor( black );
+}
+
+
+#{$footer}-list {
+    @include set( margin padding, 0 );
+
+    @include display( flex );
+    @include justify-content( space-between );
+
+    list-style: none;
+}
+
+
+#{$footer}-list__item {
+    @include display( inline-block );
+
+    padding: rem( 5 );
+    margin: 0 rem( 10 );
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
