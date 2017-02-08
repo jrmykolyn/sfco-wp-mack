@@ -39,7 +39,6 @@ $index-hero: '.index-hero';
     @include size( 100% );
     @include position( absolute, 0 0 0 0 );
 
-    background-color: rgba( getColor( white ), 0.8 );
     padding-top: rem( 200 );
     padding-bottom: rem( 100 );
 
