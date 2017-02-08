@@ -4,8 +4,9 @@ get_header();
 <header>
     <section class="index-hero">
         <div class="index-hero__image">
-            <div class="index-hero__image__background" style="background-image: url( <?= get_theme_mod( 'front_page_image_2' ); ?> );"></div>
-            <div class="index-hero__image__foreground" style="background-image: url( <?= get_theme_mod( 'front_page_image_1' ); ?> );"></div>
+            <div class="index-hero__image__background" style="background-image: url( <?= get_theme_mod( 'front_page_image_background' ); ?> );"></div>
+            <div class="index-hero__image__midground" style="background-image: url( <?= get_theme_mod( 'front_page_image_midground' ); ?> );"></div>
+            <div class="index-hero__image__foreground" style="background-image: url( <?= get_theme_mod( 'front_page_image_foreground' ); ?> );"></div>
         </div>
         <div class="index-hero__content">
             <div class="index-hero-text">

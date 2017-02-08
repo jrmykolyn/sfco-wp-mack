@@ -25,6 +25,7 @@ $index-hero: '.index-hero';
 }
 
 #{$index-hero}__image__foreground,
+#{$index-hero}__image__midground,
 #{$index-hero}__image__background, {
     @include size( 100% );
     @include position( absolute, 0 0 0 0 );

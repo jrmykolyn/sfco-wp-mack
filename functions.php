@@ -77,12 +77,17 @@ function addCustomizationOptsForFrontPage( $wp_customize ) {
         'transport' => 'refresh',
     ) );
 
-    $wp_customize->add_setting( 'front_page_image_1' , array(
+    $wp_customize->add_setting( 'front_page_image_foreground' , array(
         'default'   => null,
         'transport' => 'refresh',
     ) );
 
-    $wp_customize->add_setting( 'front_page_image_2' , array(
+    $wp_customize->add_setting( 'front_page_image_midground' , array(
+        'default'   => null,
+        'transport' => 'refresh',
+    ) );
+
+    $wp_customize->add_setting( 'front_page_image_background' , array(
         'default'   => null,
         'transport' => 'refresh',
     ) );
@@ -115,11 +120,11 @@ function addCustomizationOptsForFrontPage( $wp_customize ) {
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
-            'front_page_image_1',
+            'front_page_image_foreground',
             array(
-                'label'      => __( 'Upload the first image.', 'sfco-wp-mack' ),
+                'label'      => __( 'Upload the foreground image.', 'sfco-wp-mack' ),
                 'section'    => 'sfco-wp-mack_front_page',
-                'settings'   => 'front_page_image_1'
+                'settings'   => 'front_page_image_foreground'
             )
         )
     );
@@ -127,11 +132,23 @@ function addCustomizationOptsForFrontPage( $wp_customize ) {
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
             $wp_customize,
-            'front_page_image_2',
+            'front_page_image_midground',
             array(
-                'label'      => __( 'Upload the second image.', 'sfco-wp-mack' ),
+                'label'      => __( 'Upload the midground image.', 'sfco-wp-mack' ),
                 'section'    => 'sfco-wp-mack_front_page',
-                'settings'   => 'front_page_image_2'
+                'settings'   => 'front_page_image_midground'
+            )
+        )
+    );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'front_page_image_background',
+            array(
+                'label'      => __( 'Upload the background image.', 'sfco-wp-mack' ),
+                'section'    => 'sfco-wp-mack_front_page',
+                'settings'   => 'front_page_image_background'
             )
         )
     );
