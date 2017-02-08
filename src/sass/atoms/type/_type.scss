@@ -26,3 +26,10 @@ h1 {
     font-family: getFont( display );
 }
 
+a {
+    text-decoration: none;
+
+    @include on( hover focus ) {
+        text-decoration: underline;
+    }
+}
