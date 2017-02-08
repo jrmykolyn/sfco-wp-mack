@@ -7,13 +7,28 @@
 // --------------------------------------------------
 // PLACEHOLDERS 
 // --------------------------------------------------
-// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+%__align--base {
+    @include display( block );
+}
 
 
 // --------------------------------------------------
 // SELECTORS 
 // --------------------------------------------------
 .aligncenter {
-    @include display( block );
+    @extend %__align--base;
+
     @include set( margin-left margin-right, auto );
+}
+
+.alignleft {
+    @extend %__align--base;
+
+    float: left;
+}
+
+.alignright {
+    @extend %__align--base;
+
+    float: right;
 }
