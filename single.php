@@ -6,7 +6,7 @@ $attribution = get_field( 'project_attribution' );
 
 if ( have_posts() ):
     while( have_posts() ): the_post();
-        if ( get_field( 'hero_image' ) ):
+        if ( get_field( 'project_hero_image' ) ):
             get_template_part( 'inc/post/_post-hero' );
         endif;
         ?>
@@ -18,8 +18,8 @@ if ( have_posts() ):
                     <?php if ( $dek ): ?>
                     <p class="post-dek"><?= $dek; ?></p>
                     <?php endif; ?>
-                    <hr>
                     <?php if ( $attribution ): ?>
+                        <hr>
                         <div class="post-attribution-wrap">
                             <?= $attribution; ?>
                         </div>
