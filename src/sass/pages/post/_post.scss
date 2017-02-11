@@ -2,6 +2,7 @@
 // VARIABLES 
 // --------------------------------------------------
 $post: '.post';
+$post-hero: #{$post}-hero;
 $post-header: #{$post}-header;
 $post-body: #{$post}-body;
 
@@ -15,6 +16,12 @@ $post-body: #{$post}-body;
 // --------------------------------------------------
 // SELECTORS 
 // --------------------------------------------------
+#{$post-hero} {
+    img {
+        @include size( 100% auto );
+    }
+}
+
 #{$post-header} {
     @include max-size( rem( 800 ) auto );
 
