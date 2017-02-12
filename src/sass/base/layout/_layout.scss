@@ -25,6 +25,8 @@ $layout-section: '.layout-section';
     @include display( block );
     @include set( padding-top padding-bottom, rem( 30 ) );
 
+    background-color: getColor( white );
+
     @media ( min-width: 600px ) {
         @include set( padding-top padding-bottom, rem( 40 ) );
     }

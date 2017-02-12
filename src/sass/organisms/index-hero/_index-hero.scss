@@ -21,7 +21,9 @@ $index-hero: '.index-hero';
 
 #{$index-hero}__image {
     @include size( 100% );
-    @include position( absolute, 0 0 0 0 );
+    @include position( fixed, 0 0 0 0 );
+
+    z-index: -1;
 }
 
 #{$index-hero}__image__foreground,
@@ -31,7 +33,6 @@ $index-hero: '.index-hero';
     @include position( absolute, 0 0 0 0 );
 
     background-position: center;
-    background-attachment: fixed;
     background-size: cover;
 }
 
