@@ -22,6 +22,7 @@ $index-hero: '.index-hero';
 #{$index-hero}__image {
     @include size( 100% );
     @include position( fixed, 0 0 0 0 );
+    @include transition( top 0.25s, right 0.25s, bottom 0.25s, left 0.25s);
 
     z-index: -1;
 }
