@@ -22,16 +22,28 @@ $post-attr: '.post-attribution-wrap';
         @include display( block );
 
         margin: 0;
-        margin-bottom: rem( 5 );
-        padding: rem( 5 ) 0;
-
         font-size: rem( 14 );
-        
+        line-height: 1.5;
+
         // Media queries
         @media ( min-width: 600px ) {
             @include size( 50% auto );
 
             float: left;
+
+            // Add padding to items in left-hand column.
+            &:nth-child( 2n - 1 ) {
+                padding-right: rem( 10 );
+            }
+
+            // Add padding to items in right-hand column.
+            &:nth-child( 2n ) {
+                padding-left: rem( 10 );
+            }
+
+            &:nth-child( 2n + 1 ) {
+                clear: left;
+            }
         }
     }
 }
