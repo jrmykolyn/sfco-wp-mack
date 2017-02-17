@@ -16,4 +16,6 @@
 </head>
 <body>
     <!-- 'header' partial here. -->
+
+    <? get_template_part( 'inc/nav/_nav' ); ?>
     <main role="main">
