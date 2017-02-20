@@ -17,8 +17,6 @@ $logo: '.logo';
 #{$nav} {
     @include size( 100% rem( 50 ) );
     @include position( absolute, 0 null null 0 );
-
-    background-color: getColor( white );
     z-index: 99999;
 }
 
@@ -34,6 +32,25 @@ $logo: '.logo';
         max-width: none;
         padding: 0 rem( 38 );
     }
+}
+
+#{$nav}--supporting {
+    @extend #{$nav};
+
+    @include position( fixed, rem( -100 ) null null 0 );
+    @include transition( top 0.25s );
+
+    background-color: getColor( white );
+
+    // Supplementary classes
+    &.is-active {
+        top: 0;
+    }
+}
+
+
+#{$nav}--supporting__inner {
+    @extend #{$nav}__inner;
 }
 
 
