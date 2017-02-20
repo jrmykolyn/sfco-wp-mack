@@ -40,7 +40,13 @@ $post-body: #{$post}-body;
     }
 }
 
-#{$post-body} img {
+/**
+ * Styles for cases where the following elements/classes appear within the '$post-body':
+ * - img
+ * - .wp-admin
+ */
+#{$post-body} img,
+#{$post-body} .wp-video {
     @include display( block );
     @include set( margin-top margin-bottom, rem( 20 ) );
 
@@ -52,7 +58,9 @@ $post-body: #{$post}-body;
     @media ( min-width: 768px ) {
         @include set( margin-top margin-bottom, rem( 40 ) );
     }
+}
 
+#{$post-body} img {
     // Supplementary classes
     &.full-bleed {
         @include size( 100vw auto );

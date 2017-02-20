@@ -27,13 +27,20 @@ $logo: '.logo';
     @extend %__grid--base;
 
     height: 100%;
+
+    // Media queries
+    @media ( min-width: 768px ) {
+        width: 100%;
+        max-width: none;
+        padding: 0 rem( 50 );
+    }
 }
 
 
 #{$logo} {
     @include size( auto 100% );
     @include display( inline-block );
-    @include set( padding-top padding-bottom, rem( 5 ) );
+    @include set( padding-top padding-bottom, rem( 10 ) );
 }
 
 
