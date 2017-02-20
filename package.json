@@ -4,7 +4,8 @@
   "description": "'Mack' is a WordPress portfolio theme.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip": "cp -r dist sfco-wp-mack && zip -r sfco-wp-mack.zip sfco-wp-mack && rm -rf sfco-wp-mack"
   },
   "repository": {
     "type": "git",

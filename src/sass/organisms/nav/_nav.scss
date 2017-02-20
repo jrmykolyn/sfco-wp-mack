@@ -1,0 +1,44 @@
+// --------------------------------------------------
+// VARIABLES 
+// --------------------------------------------------
+$nav: '.nav';
+$logo: '.logo';
+
+
+// --------------------------------------------------
+// PLACEHOLDERS 
+// --------------------------------------------------
+// Write shared styles in placeholder rules here, then extend them from specific selectors below.
+
+
+// --------------------------------------------------
+// SELECTORS 
+// --------------------------------------------------
+#{$nav} {
+    @include size( 100% rem( 50 ) );
+    @include position( absolute, 0 null null 0 );
+
+    background-color: getColor( white );
+    z-index: 99999;
+}
+
+
+#{$nav}__inner {
+    @extend %__grid--base;
+
+    height: 100%;
+}
+
+
+#{$logo} {
+    @include size( auto 100% );
+    @include display( inline-block );
+    @include set( padding-top padding-bottom, rem( 5 ) );
+}
+
+
+#{$logo}__image {
+    @include size( auto 100% );
+    @include max-size( auto 100% );
+    @include display( block );
+}
