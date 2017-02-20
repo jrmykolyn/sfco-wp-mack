@@ -17,9 +17,12 @@ $post-body: #{$post}-body;
 // SELECTORS 
 // --------------------------------------------------
 #{$post-hero} {
-    img {
-        @include size( 100% auto );
-    }
+    @include size( 100% 100vh );
+
+    min-height: rem( 300 );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #{$post-header} {

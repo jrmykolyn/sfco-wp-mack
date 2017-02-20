@@ -1,5 +1,4 @@
 <header>
-    <section class="post-hero">
-        <img src="<?= get_field( 'project_hero_image' ); ?>" alt="<?= get_field( 'project_hero_image_text' ); ?>">
-    </section><!-- /.index-hero -->
+    <section class="post-hero" style="background-image: url(<?= get_field( 'project_hero_image' )?>);" title="<?= get_field( 'project_hero_image_text' ); ?>">
+    </section><!-- /.post-hero -->
 </header>
