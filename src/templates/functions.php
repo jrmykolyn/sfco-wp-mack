@@ -23,7 +23,32 @@ function registerMenus() {
  function theme_customize_register( $wp_customize ) {
      addCustomizationOptsForFrontPage( $wp_customize );
      addCustomizationOptsForContactInfo( $wp_customize );
+     addCustomizationOptsForSiteIdentity( $wp_customize );
  } // /theme_customize_register()
+
+
+/**
+ * NOTE: This function hooks into the existing 'title_tagline' section.
+ */
+function addCustomizationOptsForSiteIdentity( $wp_customize ) {
+    $wp_customize->add_setting( 'header_logo', array(
+        'default' => null,
+        'transport' => 'refresh'
+    ) );
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'header_logo',
+            array(
+                'label'      => __( 'Header Logo', 'sfco-wp-mack' ),
+                'decription' => __( 'This image will be displayed in the "header" element at the top of the page. Image should be at least 100px in height.' ),
+                'section'    => 'title_tagline',
+                'settings'   => 'header_logo'
+            )
+        )
+    );
+} // /addCustomizationOptsForSiteIdentity()
 
 
 /**

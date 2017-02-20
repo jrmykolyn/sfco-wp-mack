@@ -1,7 +1,7 @@
 <nav class="nav">
     <div class="nav__inner">
         <a href="#" class="logo">
-            <img class="logo__image" src="https://placeholdit.imgix.net/~text?txtsize=18&txt=LOGO&w=100&h=66" alt="<?= 'Logo Image'; ?>">
+            <img class="logo__image" src="<?= get_theme_mod( 'header_logo' ); ?>" alt="<?= 'Logo Image'; ?>">
         </a><!-- /.logo -->
         <?php
         /// TEMP - Force `if` condition below to fail.
