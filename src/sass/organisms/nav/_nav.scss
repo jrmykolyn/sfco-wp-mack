@@ -19,6 +19,7 @@ $logo: '.logo';
     @include position( absolute, 0 null null 0 );
 
     background-color: getColor( white );
+    z-index: 99999;
 }
 
 
@@ -31,7 +32,7 @@ $logo: '.logo';
 
 #{$logo} {
     @include size( auto 100% );
-    @include display( block );
+    @include display( inline-block );
     @include set( padding-top padding-bottom, rem( 5 ) );
 }
 

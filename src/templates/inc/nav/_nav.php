@@ -1,9 +1,12 @@
 <nav class="nav">
     <div class="nav__inner">
-        <a href="#" class="logo">
+        <?php if ( get_theme_mod( 'header_logo' ) ) { ?>
+        <a href="<?= get_home_url(); ?>" class="logo">
             <img class="logo__image" src="<?= get_theme_mod( 'header_logo' ); ?>" alt="<?= 'Logo Image'; ?>">
         </a><!-- /.logo -->
         <?php
+        }
+
         /// TEMP - Force `if` condition below to fail.
         if ( has_nav_menu( 'header-nav' ) && 1 == 2 ) {
             wp_nav_menu(
