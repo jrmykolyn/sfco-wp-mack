@@ -1,9 +1,22 @@
 <?php
 /* ACTIONS */
  add_action( 'customize_register', 'theme_customize_register' );
+ add_action( 'init', 'registerMenus' );
 
 
 /* THEME FUNCTIONS */
+/**
+ * ...
+ */
+function registerMenus() {
+    register_nav_menus(
+        array(
+            'header-nav' => __( 'Header Navigation' )
+        )
+    );
+}
+
+
 /**
  * ...
  */
