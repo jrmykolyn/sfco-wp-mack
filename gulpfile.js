@@ -1,11 +1,14 @@
 // --------------------------------------------------
 // IMPORT MODULES
 // --------------------------------------------------
+const browserify = require('browserify');
+const buffer = require('vinyl-buffer');
 const concat = require('gulp-concat');
 const gulp = require('gulp');
 const PathMap = require('sfco-path-map');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
+const source = require('vinyl-source-stream');
 const uglify = require('gulp-uglify');
 
 // --------------------------------------------------
@@ -102,7 +105,16 @@ gulp.task( 'scripts:theme', function() {
  * Task concatenates, minifies, and renames all vendor scripts.
  */
 gulp.task( 'scripts:vendor', function() {
-    return doScripts( `${PATHS.vendorScriptsSrc}/**/*.js`, PATHS.scriptsDest, 'vendor.js' );
+    return browserify( { entries: `${PATHS.vendorScriptsSrc}/index.js` } )
+      .bundle()
+      .pipe( source( 'vendor.js' ) )
+      .pipe( buffer() )
+      .pipe( gulp.dest( PATHS.scriptsDest ) )
+      .pipe( uglify() )
+      .pipe( rename( {
+        suffix: '.min',
+      } ) )
+      .pipe( gulp.dest( PATHS.scriptsDest ) );
 } );
 
 /**
