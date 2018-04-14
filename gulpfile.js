@@ -29,6 +29,26 @@ var PATHS = {
 };
 
 
+/* DECLARE FUNCTIONS */
+/**
+ * Consume, concatenate, rename, and migrate theme/vendor scripts.
+ *
+ * @param {string] src - File path or glob for input.
+ * @param {string} dest - File path for output.
+ * @param {string} name - Name of concatenated output.
+ */
+const doScripts = ( src, dest, name ) => {
+    return gulp.src( src )
+        .pipe( concat( name ) )
+        .pipe( uglify() )
+        .pipe( rename( function( path ) {
+            path.basename += '.min';
+            path.extname = '.js';
+        } ) )
+        .pipe( gulp.dest( dest ) );
+}
+
+
 /* DECLARE TASKS */
 /**
  * 'Default' Gulp task, executed when `gulp` is run from the
@@ -94,37 +114,21 @@ gulp.task( 'sass', function() {
 /**
  * Task concatenates, minifies, and renames all theme scripts.
  */
-/// TODO: Consolidate with `scripts:vendor`.
 gulp.task( 'scripts:theme', function() {
-    return gulp.src( PATHS.js.theme.src )
-        .pipe( concat( 'theme.js' ) )
-        .pipe( uglify() )
-        .pipe( rename( function( path ) {
-            path.basename += '.min';
-            path.extname = '.js';
-        } ) )
-        .pipe( gulp.dest( PATHS.js.theme.dest ) );
+    return doScripts( PATHS.js.theme.src, PATHS.js.theme.dest, 'theme.js' );
 } );
 
 
 /**
  * Task concatenates, minifies, and renames all vendor scripts.
  */
-/// TODO: Consolidate with `scripts:theme`.
 gulp.task( 'scripts:vendor', function() {
-    gulp.src( PATHS.js.vendor.src )
-        .pipe( concat( 'vendor.js' ) )
-        .pipe( uglify() )
-        .pipe( rename( function( path ) {
-            path.basename += '.min';
-            path.extname = '.js';
-        } ) )
-        .pipe( gulp.dest( PATHS.js.theme.dest ) );
+    return doScripts( PATHS.js.vendor.src, PATHS.js.theme.dest, 'vendor.js' );
 } );
 
 
 /**
- * /// TODO
+ * Wrapper around script-related tasks.
  */
 gulp.task( 'scripts', [ 'scripts:vendor', 'scripts:theme' ] );
 
