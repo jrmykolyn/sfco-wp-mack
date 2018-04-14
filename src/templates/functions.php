@@ -1,4 +1,8 @@
 <?php
+/*  GLOBALS */
+$theme = wp_get_theme();
+
+
 /* ACTIONS */
  add_action( 'customize_register', 'theme_customize_register' );
  add_action( 'init', 'registerMenus' );
@@ -277,6 +281,9 @@ if ( !is_admin() ) {
 }
 
 
-wp_register_script( 'main', get_stylesheet_directory_uri() . '/js/main.min.js', array( 'jquery' ), '', true );
+wp_register_script( 'main', get_stylesheet_directory_uri() . '/js/theme.min.js', array( 'jquery' ), $theme[ 'Version' ], true );
 wp_enqueue_script( 'main' );
+
+wp_register_script( 'vendor', get_stylesheet_directory_uri() . '/js/vendor.min.js', array( 'jquery' ), $theme[ 'Version' ], true );
+wp_enqueue_script( 'vendor' );
 ?>

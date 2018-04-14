@@ -17,9 +17,15 @@ var PATHS = {
         dest: './dist/css/',
     },
     js: {
-        src: 'src/js/**/*.js',
-        dest: './dist/js/'
-    }
+        theme: {
+            src: 'src/js/theme/**/*.js',
+            dest: './dist/js/',
+        },
+        vendor: {
+            src: 'src/js/vendor/**/*.js',
+            dest: './dist/js/',
+        },
+    },
 };
 
 
@@ -86,19 +92,41 @@ gulp.task( 'sass', function() {
 
 
 /**
- * Task concatenates, minifies and renames all `*.js` files in
- * `src/`directory. Resulting files are saved to specified 'dest'.
+ * Task concatenates, minifies, and renames all theme scripts.
  */
-gulp.task( 'scripts', function() {
-    return gulp.src( PATHS.js.src )
-        .pipe( concat( 'main.js' ) )
+/// TODO: Consolidate with `scripts:vendor`.
+gulp.task( 'scripts:theme', function() {
+    return gulp.src( PATHS.js.theme.src )
+        .pipe( concat( 'theme.js' ) )
         .pipe( uglify() )
         .pipe( rename( function( path ) {
             path.basename += '.min';
             path.extname = '.js';
         } ) )
-        .pipe( gulp.dest( PATHS.js.dest ) );
+        .pipe( gulp.dest( PATHS.js.theme.dest ) );
 } );
+
+
+/**
+ * Task concatenates, minifies, and renames all vendor scripts.
+ */
+/// TODO: Consolidate with `scripts:theme`.
+gulp.task( 'scripts:vendor', function() {
+    gulp.src( PATHS.js.vendor.src )
+        .pipe( concat( 'vendor.js' ) )
+        .pipe( uglify() )
+        .pipe( rename( function( path ) {
+            path.basename += '.min';
+            path.extname = '.js';
+        } ) )
+        .pipe( gulp.dest( PATHS.js.theme.dest ) );
+} );
+
+
+/**
+ * /// TODO
+ */
+gulp.task( 'scripts', [ 'scripts:vendor', 'scripts:theme' ] );
 
 
 /**
