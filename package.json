@@ -27,5 +27,8 @@
     "normalize.css": "^5.0.0",
     "sfco-sass-utils": "^1.14.1",
     "susy": "^2.2.12"
+  },
+  "dependencies": {
+    "object-fit-images": "^3.2.3"
   }
 }
