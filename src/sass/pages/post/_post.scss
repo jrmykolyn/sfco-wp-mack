@@ -1,5 +1,5 @@
 // --------------------------------------------------
-// VARIABLES 
+// VARIABLES
 // --------------------------------------------------
 $post: '.post';
 $post-hero: #{$post}-hero;
@@ -8,21 +8,29 @@ $post-body: #{$post}-body;
 
 
 // --------------------------------------------------
-// PLACEHOLDERS 
+// PLACEHOLDERS
 // --------------------------------------------------
 // Write shared styles in placeholder rules here, then extend them from specific selectors below.
 
 
 // --------------------------------------------------
-// SELECTORS 
+// SELECTORS
 // --------------------------------------------------
 #{$post-hero} {
     @include size( 100% 100vh );
 
     min-height: rem( 300 );
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+
+    // Descendant elems.
+    img {
+        @include dims( 100% );
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
 }
 
 #{$post-header} {
