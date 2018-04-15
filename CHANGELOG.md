@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.1.0] - 2018-04-15
 ### Added
 - Add [Object Fit Images](https://www.npmjs.com/package/object-fit-images) to dependencies. (topic-1)
 - Add [Path Map](https://www.npmjs.com/package/sfco-path-map) to development dependencies. (topic-3)
