@@ -1,0 +1,128 @@
+{
+    "key": "group_5ad2cd519c4df",
+    "title": "Project",
+    "fields": [
+        {
+            "key": "field_5ad2cde834330",
+            "label": "Hero Image",
+            "name": "project_hero_image",
+            "type": "image",
+            "instructions": "Upload the project's 'hero image'. Image should be 1600x900px.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5ad2ce0634331",
+            "label": "Hero Image Text",
+            "name": "project_hero_image_text",
+            "type": "text",
+            "instructions": "Add a short blurb of text that describes the project's 'hero image'. This text won't be displayed on the project page, but will be added to the image as 'alternative text'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ad2cd54ad84d",
+            "label": "Dek",
+            "name": "project_dek",
+            "type": "textarea",
+            "instructions": "Add a short description of the project.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5ad3f82a36abf",
+            "label": "Reverse Text",
+            "name": "project_reverse_text",
+            "type": "checkbox",
+            "instructions": "Select this option if you'd like to display white text on top of the project's featured image. \r\n<br \/>\r\n<br \/>\r\n'Featured images' are used on the 'home'\/index page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "true": "Use white text"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_5ad2cdcdff33e",
+            "label": "Attribution",
+            "name": "project_attribution",
+            "type": "textarea",
+            "instructions": "Add the project attribution info here.\r\n<br \/>\r\n<br \/>\r\nEach item should be wrapped in a 'p' tag.<br \/>\r\nEmphasized text should be wrapped in a 'strong' tag.\r\n<br \/>\r\n<br \/>\r\neg.<br \/>\r\n&lt;p&gt;&lt;strong&gt;Designer:&lt;\/strong&gt; Jane Smith&lt;p&gt;",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1523841342
+}
