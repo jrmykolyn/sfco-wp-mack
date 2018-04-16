@@ -5,18 +5,18 @@
     $img_srcset;
 
     // Conditionals below handle cases where `project_hero_image` is one of:
-    // - a URL (string).
     // - an ID (int).
+    // - a URL (string).
     // - a hash (array).
-    /// TODO: Update logic and remove fallbacks when custom field settingsa are added to version control.
-    if ( is_string( $img ) ) {
-        $img_src = $img;
-    } else if ( is_int( $img ) ) {
+    /// TODO: Update logic and remove fallbacks when custom field settings are added to version control.
+    if ( preg_match( '/[0-9]+/', $img ) ) {
         $img_src = wp_get_attachment_image_src( $img, 'medium_large' )[ 0 ];
         $img_srcset = wp_get_attachment_image_srcset( $img, 'medium_large' );
-    } else if ( isset( $img[ 'ID' ] ) ) {
-        $img_src = wp_get_attachment_image_src( $img[ 'ID' ], 'medium_large' )[ 0 ];
-        $img_srcset = wp_get_attachment_image_srcset( $img[ 'ID' ], 'medium_large' );
+    } else if ( is_string( $img ) ) {
+        $img_src = $img;
+    } else if ( isset( $img[ 'id' ] ) ) {
+        $img_src = wp_get_attachment_image_src( $img[ 'id' ], 'medium_large' )[ 0 ];
+        $img_srcset = wp_get_attachment_image_srcset( $img[ 'id' ], 'medium_large' );
     }
     ?>
     <section class="post-hero">
