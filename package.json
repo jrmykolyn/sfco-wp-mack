@@ -1,6 +1,6 @@
 {
   "name": "sfco-wp-mack",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "'Mack' is a WordPress portfolio theme.",
   "main": "index.js",
   "scripts": {
