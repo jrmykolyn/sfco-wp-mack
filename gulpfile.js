@@ -15,17 +15,16 @@ const uglify = require( 'gulp-uglify' );
 // DECLARE VARS
 // --------------------------------------------------
 const PATHS = new PathMap( {
-	src: 'src',
-	dest: 'dist',
-	// Templates
-	templatesSrc: '{{src}}/templates',
-	templatesDest: '{{dest}}',
+	src: 'theme',
+	assets: '{{src}}/assets',
+	assetsSrc: '{{assets}}/src',
+	assetsDest: '{{assets}}/dist',
 	// Styles
-	stylesSrc: '{{src}}/sass',
-	stylesDest: '{{dest}}/css',
+	stylesSrc: '{{assetsSrc}}/sass',
+	stylesDest: '{{assetsDest}}/css',
 	// Scripts
-	scriptsSrc: '{{src}}/js',
-	scriptsDest: '{{dest}}/js',
+	scriptsSrc: '{{assetsSrc}}/js',
+	scriptsDest: '{{assetsDest}}/js',
 	themeScriptsSrc: '{{scriptsSrc}}/theme',
 	vendorScriptsSrc: '{{scriptsSrc}}/vendor',
 } );
@@ -57,23 +56,7 @@ const doScripts = ( src, dest, name ) => {
 /**
  * 'Default' Gulp task, executed when `gulp` is run from the command line with *no* arguments.
  */
-gulp.task( 'default', [ 'meta', 'templates', 'sass', 'scripts', 'watch' ] );
-
-/**
- * Task migrates `style.css` file (required by theme).
- */
-gulp.task( 'meta', function() {
-	gulp.src( `${PATHS.src}/style.css` )
-		.pipe( gulp.dest( PATHS.dest ) );
-} );
-
-/**
- * Task migrates all template/PHP files.
- */
-gulp.task( 'templates', function() {
-	gulp.src( `${PATHS.templatesSrc}/**/*.php` )
-		.pipe( gulp.dest( PATHS.templatesDest ) );
-} );
+gulp.task( 'default', [ 'sass', 'scripts', 'watch' ] );
 
 /**
  * Task converts contents of `styles.scss` file to vanilla CSS.
@@ -126,7 +109,6 @@ gulp.task( 'scripts', [ 'scripts:vendor', 'scripts:theme' ] );
  * Task watches for changes to files in `src/` directory, executes appropriate task.
  */
 gulp.task( 'watch', function() {
-	gulp.watch( `${PATHS.templatesSrc}/**/*.php`, [ 'templates' ] );
 	gulp.watch( `${PATHS.stylesSrc}/**/*.scss`, [ 'sass' ] );
 	gulp.watch( `${PATHS.scriptsSrc}/**/*.js`, [ 'scripts' ] );
 } );
