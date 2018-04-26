@@ -275,7 +275,7 @@ add_image_size( 'hero--xlarge', 2400, 1350, false );
 if ( !is_admin() ) {
     add_action( "wp_enqueue_scripts", "enqueue_jquery", 11 ) ;
 
-    wp_register_style( 'styles', get_stylesheet_directory_uri() . '/assets/dist/css/styles.css' );
+    wp_register_style( 'styles', get_stylesheet_directory_uri() . '/assets/dist/css/styles.css', null, $theme[ 'Version' ] );
     wp_enqueue_style( 'styles' );
 
     function enqueue_jquery() {
