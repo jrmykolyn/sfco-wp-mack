@@ -3,6 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Added
+- ...
+
+### Changed
+- ...
+
+### Fixed
+- Fix issue where theme stylesheet reference does not include current theme version.
+- Fix lingering PHP 'short open tags' (ie. replace `<?` with `<?php`).
+
 ## [1.1.3] - 2018-04-26
 ### Added
 - Add theme-specific custom fields to version control. (topic-5)
@@ -10,10 +21,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Changed
 - Update directory structure, build tools, and scripts. (topic-6)
-- Update 'post hero' partial to account for gif assets.
 
 ### Fixed
-- Fix issue where location of `wp_head()` was preventing theme styles from being pulled in.
+- Fix issue where animated gifs are displayed as static images in the 'hero' position.
+- Fix issue where location of `wp_head()` prevents theme styles from being pulled in.
 
 ## [1.1.2] - 2018-04-15
 ### Fixed
