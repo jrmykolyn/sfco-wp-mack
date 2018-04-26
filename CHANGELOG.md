@@ -3,12 +3,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.1.3] - 2018-04-26
 ### Added
-- Added theme-specific custom fields to version control. (topic-5)
+- Add theme-specific custom fields to version control. (topic-5)
+- Add 'hero' thumbnail sizes.
 
 ### Changed
 - Update directory structure, build tools, and scripts. (topic-6)
+- Update 'post hero' partial to account for gif assets.
+
+### Fixed
+- Fix issue where location of `wp_head()` was preventing theme styles from being pulled in.
 
 ## [1.1.2] - 2018-04-15
 ### Fixed
