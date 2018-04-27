@@ -14,22 +14,12 @@ get_header();
                 <h2 class="index-subtitle"><?= get_theme_mod( 'front_page_subtitle' ); ?></h3>
             </div>
         </div>
-        <div class="index-hero__cta js--index-hero-arrow">
-
-        </div>
+        <div class="index-hero__cta js--index-hero-arrow"></div>
     </section><!-- /.index-hero -->
 </header>
 <section class="layout-section">
     <div class="layout-section__inner">
-        <?php
-        if ( have_posts() ):
-            while( have_posts() ): the_post();
-                get_template_part( 'inc/post-preview/_post-preview' );
-            endwhile;
-        else:
-            /* TODO - Handle 'no posts' case. */
-        endif;
-        ?>
+        <?php get_template_part( 'inc/loop/_loop' ); ?>
     </div><!-- /.layout-section__inner -->
 </section><!-- /.layout-section -->
 <?php
