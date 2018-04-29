@@ -5,10 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 ### Added
-- ...
+- Add basic markup to `archive.php`.
+- Add theme-wide configuration settings via `admin/config.php`.
 
 ### Changed
-- ...
+- Migrate contents of `functions.php` to dedicated `admin/*.php` files.
+
+### Removed
+- Remove `category.php`.
+- Remove `tag.php`.
 
 ### Fixed
 - Fix issue where theme stylesheet reference does not include current theme version.
