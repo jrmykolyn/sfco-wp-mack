@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Add theme-wide configuration settings via `admin/config.php`.
 
 ### Changed
+- Update images: override default `srcset` and `sizes` values; strip `width` and `height` attributes from embedded images. (topic-9)
 - Migrate contents of `functions.php` to dedicated `admin/*.php` files.
 
 ### Removed
