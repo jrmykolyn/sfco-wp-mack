@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.1.4] - 2018-04-28
 ### Added
 - Add basic markup to `archive.php`.
 - Add theme-wide configuration settings via `admin/config.php`.
